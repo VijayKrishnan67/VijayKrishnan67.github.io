@@ -1,188 +1,90 @@
-<%-- 
-    Document   : index
-    Created on : 16 Jan 2025, 10:23:06 pm
-    Author     : Vijay Krishnan
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vijay Krishnan - Portfolio</title>
+    <title>Vijay's Tech Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
+            background: #f4f4f4;
             color: #333;
-            background: #ecf0f1;
+            line-height: 1.6;
         }
 
-        nav {
+        header {
             background: #2c3e50;
+            color: white;
             padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #3498db;
-        }
-
-        section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        #hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9));
-            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
         }
 
-        #hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .container {
+            width: 80%;
+            margin: auto;
             padding: 2rem 0;
         }
 
-        .project-card {
-            background: #f8f9fa;
-            border-radius: 8px;
+        .blog-post {
+            background: white;
             padding: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-info {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-item {
-            margin: 1.5rem 0;
-            padding: 1rem;
-            background: #f8f9fa;
             border-radius: 8px;
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
         }
 
-        .contact-item:hover {
-            transform: translateY(-3px);
-        }
-
-        .contact-item a {
+        .blog-post h2 {
+            font-size: 1.5rem;
             color: #2c3e50;
-            text-decoration: none;
-            font-weight: 500;
         }
 
-        .contact-item a:hover {
+        .blog-post p {
+            margin-top: 0.5rem;
+        }
+
+        .blog-post a {
+            text-decoration: none;
             color: #3498db;
+            font-weight: bold;
+        }
+
+        .blog-post a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        Vijay's Tech Blog
+    </header>
 
-    <section id="hero">
-        <h1> Vijay Krishnan </h1>
-        <p>Machine Learning Enthusiast | Data Analyst | Problem Solver</p>
-    </section>
+    <div class="container">
+        <section class="blog-post">
+            <h2>Understanding Self-Attention in NLP</h2>
+            <p>Explore how self-attention mechanisms work in transformer models like BERT and GPT.</p>
+            <a href="#">Read More</a>
+        </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a Data Science enthusiast pursuing an Integrated MSc at Amrita College. My expertise includes Python, SQL, Machine Learning, and Deep Learning, and I have a strong foundation in NLP and Computer Vision.</p>
-    </section>
+        <section class="blog-post">
+            <h2>Building a Sentiment Analysis Model</h2>
+            <p>Learn how to build and deploy a sentiment analysis model using Hugging Face Transformers.</p>
+            <a href="#">Read More</a>
+        </section>
 
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Multimodal Hate Speech Detection</h3>
-                <p>Built a model that combines text and image features using RoBERTa and self-attention for hate speech detection on the Hateful Memes dataset.</p>
-            </div>
-            <div class="project-card">
-                <h3>House Price Prediction</h3>
-                <p>Developed machine learning models for real estate price prediction and investment strategies using extensive EDA and regression techniques.</p>
-            </div>
-            <div class="project-card">
-                <h3>Graph Networking Model</h3>
-                <p>Used PyVis and NetworkX to analyze taxi trip data, applying graph centrality concepts to understand network importance.</p>
-            </div>
-            <div class="project-card">
-                <h3>Taxi Price Prediction</h3>
-                <p>Trained ML models on taxi fare data to optimize price prediction accuracy.</p>
-            </div>
-            <div class="project-card">
-                <h3>Blood Bank & Donor Management System</h3>
-                <p>Built a web-based system using JSP, PostgreSQL, and Apache Tomcat for donor management.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <h3>Email</h3>
-                <a href="mailto:vijay.krishnan@gmail.com">vijay.krishnan@example.com</a>
-            </div>
-            <div class="contact-item">
-                <h3>LinkedIn</h3>
-                <a href="https://linkedin.com/in/vijaykrishnan" target="_blank">linkedin.com/in/vijaykrishnan</a>
-            </div>
-            <div class="contact-item">
-                <h3>GitHub</h3>
-                <a href="https://github.com/vijaykrishnan" target="_blank">github.com/vijaykrishnan</a>
-            </div>
-        </div>
-    </section>
+        <section class="blog-post">
+            <h2>The Role of Graph Neural Networks</h2>
+            <p>Dive into the world of Graph Neural Networks and their applications in AI.</p>
+            <a href="#">Read More</a>
+        </section>
+    </div>
 </body>
 </html>
